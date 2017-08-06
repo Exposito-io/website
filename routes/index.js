@@ -33,4 +33,4 @@ function getRandomInt(min, max) {
   return Math.floor((Math.random() * (max - min)) + min)
 }
 
-module.exports = router;
+module.exports = router
