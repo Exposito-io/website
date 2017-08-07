@@ -13,6 +13,7 @@ router.get('/', function(req, res) {
   res.redirect(getHomepage())
 })
 
+
 router.get('/homea', function(req, res) {
   res.render('home-a', { title: 'A' })
 })
