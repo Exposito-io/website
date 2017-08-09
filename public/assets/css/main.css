@@ -1670,7 +1670,7 @@
 
 	.big-quote {
 		font-size: 40px;
-		line-height: 50px;
+		line-height: 56px;
 		text-shadow: 0 1px 4px #333;
 		color: white;
 		word-spacing: 10px;
@@ -3056,11 +3056,11 @@
 		}	
 
 		.spotlight.middle .content, .spotlight.middle .content {
-			width: 40%;
+			width: 35%;
 		}	
 
 		.spotlight.middle .main-content, .spotlight.middle .main-content {
-			width: 60%;
+			width: 65%;
 		}				
 
 		.spotlight.left .content {
