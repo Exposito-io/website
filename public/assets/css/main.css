@@ -1668,6 +1668,24 @@
 		padding: 0.5em 0 0.5em 2em;
 	}
 
+	.big-quote {
+		font-size: 40px;
+		line-height: 50px;
+		text-shadow: 0 1px 4px #333;
+		color: white;
+		word-spacing: 10px;
+	}
+
+	.big-quote:before {
+		content: '"';
+		font-size: 60px;
+	}
+
+	.big-quote:after {
+		content: '"';
+		font-size: 60px;
+	}	
+
 	code {
 		background: rgba(255, 255, 255, 0.075);
 		border-radius: 4px;
@@ -2779,7 +2797,7 @@
 		input[type="reset"].special,
 		input[type="button"].special,
 		.button.special {
-			background-color: #e44c65;
+			background-color: #445064;
 			box-shadow: none;
 			color: #ffffff !important;
 		}
@@ -2970,6 +2988,26 @@
 			position: absolute;
 		}
 
+		.spotlight .main-content {
+			-moz-transform: translate(0,0);
+			-webkit-transform: translate(0,0);
+			-ms-transform: translate(0,0);
+			transform: translate(0,0);
+			-moz-transition: -moz-transform 1s ease, opacity 1s ease;
+			-webkit-transition: -webkit-transform 1s ease, opacity 1s ease;
+			-ms-transition: -ms-transform 1s ease, opacity 1s ease;
+			transition: transform 1s ease, opacity 1s ease;
+			background: rgba(23, 24, 32, 0.35);
+			border-style: solid;
+			opacity: 1;
+			position: absolute;
+		}	
+
+		.spotlight .main-content .big-quote {
+			margin-top: 25%;
+			transform: translateY(-50%);
+		}	
+
 		.spotlight .goto-next {
 			-moz-transform: translate(0,0);
 			-webkit-transform: translate(0,0);
@@ -3009,15 +3047,43 @@
 			width: 28em;
 		}
 
+
+		.spotlight.left .main-content, .spotlight.right .main-content {
+			height: 101%;
+			padding: 6em 3em;
+			top: 0;
+			width: calc(100% - 28em);
+		}	
+
+		.spotlight.middle .content, .spotlight.middle .content {
+			width: 40%;
+		}	
+
+		.spotlight.middle .main-content, .spotlight.middle .main-content {
+			width: 60%;
+		}				
+
 		.spotlight.left .content {
 			border-right-width: 0.35em;
 			left: 0;
 		}
 
+		.spotlight.left .main-content {
+			border-right-width: 0;
+			left: initial;
+			right: 0;
+		}		
+
 		.spotlight.right .content {
 			border-left-width: 0.35em;
 			right: 0;
 		}
+
+		.spotlight.right .main-content {
+			border-right-width: 0;
+			right: initial;
+			left: 0;
+		}	
 
 		.spotlight.style1 .content {
 			border-color: #e44c65;
