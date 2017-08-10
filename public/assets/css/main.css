@@ -2995,14 +2995,10 @@
 		}
 
 		.spotlight .main-content {
-			-moz-transform: translate(0,0);
-			-webkit-transform: translate(0,0);
-			-ms-transform: translate(0,0);
-			transform: translate(0,0);
-			-moz-transition: -moz-transform 1s ease, opacity 1s ease;
-			-webkit-transition: -webkit-transform 1s ease, opacity 1s ease;
-			-ms-transition: -ms-transform 1s ease, opacity 1s ease;
-			transition: transform 1s ease, opacity 1s ease;
+			-moz-transition: opacity 1s ease;
+			-webkit-transition: opacity 1s ease;
+			-ms-transition: opacity 1s ease;
+			transition: opacity 0.25s ease-in;
 			background: rgba(23, 24, 32, 0.35);
 			border-style: solid;
 			opacity: 1;
@@ -3010,8 +3006,13 @@
 		}
 
 		.spotlight .main-content .big-quote {
+			-moz-transition: opacity 0.5s ease-in;
+			-webkit-transition: opacity 0.5s ease-in;
+			-ms-transition: opacity 0.5s ease-in;
+			transition: opacity 0.5s ease-in;
 			margin-top: 25%;
 			transform: translateY(-50%);
+			opacity: 1;
 		}
 
 		.spotlight .goto-next {
@@ -3104,6 +3105,10 @@
 		}
 
 		.spotlight.inactive .content {
+			opacity: 0;
+		}
+
+		.spotlight.inactive .main-content .big-quote {
 			opacity: 0;
 		}
 
