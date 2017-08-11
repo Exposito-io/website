@@ -23,6 +23,11 @@ router.get('/homeb', function(req, res) {
 })
 
 
+router.post('/newsletter', function(req, res) {
+  // TODO
+  res.render('home-a', { title: 'A' })
+})
+
 
 function getHomepage() {
   return PAGES[getRandomInt(0, PAGES.length)]
