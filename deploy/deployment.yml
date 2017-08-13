@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: exposito-website
+  name: exposito-website
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: exposito-website
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: exposito-website
+    spec:
+      containers:
+      - image: gcr.io/quantal-152414/exposito-website:v0.0.1
+        imagePullPolicy: IfNotPresent
+        name: exposito-website
+        ports:
+        - containerPort: 80
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 100m
+            memory: 50Mi
+        terminationMessagePath: /dev/termination-log
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

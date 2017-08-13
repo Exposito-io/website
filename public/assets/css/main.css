@@ -3017,7 +3017,7 @@
 		}
 
 		.spotlight .main-content .vertical-align {
-			transition: opacity 0.5s ease-in;
+			transition: opacity 0.75s ease-in;
 			margin-top: 25%;
 			transform: translateY(-50%);
 			opacity: 1;

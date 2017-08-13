@@ -3,7 +3,7 @@ var router = express.Router()
 
 const PAGES = [
   '/homea',
-  '/homeb',
+  //'/homeb',
   //'/homec'
 ]
 
