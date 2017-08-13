@@ -593,3 +593,8 @@ function scrollTo(id) {
 
 	return false
 }
+
+
+function signup() {
+	
+}

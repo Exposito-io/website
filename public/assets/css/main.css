@@ -3006,9 +3006,17 @@
 		}
 
 		.spotlight .main-content .big-quote {
+			/*
 			-moz-transition: opacity 0.5s ease-in;
 			-webkit-transition: opacity 0.5s ease-in;
 			-ms-transition: opacity 0.5s ease-in;
+			transition: opacity 0.5s ease-in;
+			margin-top: 25%;
+			transform: translateY(-50%);
+			opacity: 1;*/
+		}
+
+		.spotlight .main-content .vertical-align {
 			transition: opacity 0.5s ease-in;
 			margin-top: 25%;
 			transform: translateY(-50%);
@@ -3109,6 +3117,10 @@
 		}
 
 		.spotlight.inactive .main-content .big-quote {
+			opacity: 0;
+		}
+
+		.spotlight.inactive .main-content .vertical-align {
 			opacity: 0;
 		}
 
@@ -3496,6 +3508,17 @@
 	body.is-touch #banner {
 		background-attachment: scroll;
 	}
+
+.cloud-providers {
+	text-align: center;
+	padding-right: 20px;
+}
+
+.cloud-providers img {
+	width: 12em;
+	vertical-align: middle;
+}
+
 
 /* Footer */
 
