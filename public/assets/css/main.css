@@ -2483,7 +2483,7 @@
 			position: absolute;
 			left: 0;
 			top: 0;
-			background-image: url("images/overlay.png");
+			/*background-image: url("images/overlay.png");*/
 			width: 100%;
 			height: 100%;
 			z-index: 1;
@@ -3472,13 +3472,19 @@
 					top: 0;
 				}
 
+			body.landing.is-loading #banner .content .image {
+				transform: rotate(19deg);
+			}
+
 			#banner .content .image {
 				border-radius: 100%;
 				display: inline-block;
-				height: 18em;
+				height: 13em;
 				margin-left: 3em;
 				vertical-align: middle;
-				width: 18em;
+				width: 13em;
+				transition: transform 1s ease-out 1s;
+		    transform: rotate(0deg);
 			}
 
 				#banner .content .image img {
