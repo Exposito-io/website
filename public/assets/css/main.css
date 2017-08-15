@@ -89,7 +89,6 @@
 		display: none;
 		position: absolute;
 		top: 50%;
-		bottom: 0;
 		left: 20px;
 		right: 20px;
 		font-size: 1.4em;
@@ -98,7 +97,7 @@
 		color: white;
 		word-spacing: 6px;
 		transform: translateY(-50%);
-	}	
+	}
 
 	.image.main .big-quote:before {
 		content: '“';
@@ -239,7 +238,7 @@
 
 		.image.main .big-quote {
 			display: initial;
-		}		
+		}
 
 		.container.\31 25\25 {
 			width: 100%;
@@ -531,7 +530,7 @@
 
 		.only-small {
 			display: none;
-		}	
+		}
 
 		.only-medium {
 			display: none;
@@ -539,11 +538,11 @@
 
 		.only-large {
 			display: none;
-		}			
+		}
 
 		.only-xlarge {
 			display: initial;
-		}				
+		}
 
 		.row > * {
 			padding: 0 0 0 2.5em;
@@ -774,11 +773,11 @@
 
 		.only-large {
 			display: initial;
-		}			
+		}
 
 		.only-xlarge {
 			display: none;
-		}	
+		}
 
 		.row > * {
 			padding: 0 0 0 2.5em;
@@ -1001,7 +1000,7 @@
 
 		.only-small {
 			display: none;
-		}		
+		}
 
 		.only-medium {
 			display: initial;
@@ -1009,11 +1008,11 @@
 
 		.only-large {
 			display: none;
-		}			
+		}
 
 		.only-xlarge {
 			display: none;
-		}	
+		}
 
 
 
@@ -1238,7 +1237,7 @@
 
 		.only-small {
 			display: initial;
-		}	
+		}
 
 		.only-medium {
 			display: none;
@@ -1246,15 +1245,15 @@
 
 		.only-large {
 			display: none;
-		}			
+		}
 
 		.only-xlarge {
 			display: none;
-		}	
+		}
 
 		.main-content {
 			display: none;
-		}					
+		}
 
 		.row > * {
 			padding: 0 0 0 2.5em;
@@ -1474,7 +1473,7 @@
 
 		.only-small {
 			display: small;
-		}	
+		}
 
 		.only-xsmall {
 			display: initial;
@@ -1486,11 +1485,11 @@
 
 		.only-large {
 			display: none;
-		}			
+		}
 
 		.only-xlarge {
 			display: none;
-		}		
+		}
 
 		.main-content {
 			display: none;
@@ -2282,6 +2281,7 @@
 
 	section.special, article.special {
 		text-align: center;
+		position: relative;
 	}
 
 	header p {
@@ -4272,7 +4272,7 @@
 	}
 
 
-.thankyou {
+#invitation > .thankyou {
 	z-index: -1;
 	position: absolute;
 	top: 0;
@@ -4280,10 +4280,19 @@
 	left: 0;
 	right: 0;
 	opacity: 0;
+	background: #1c1d26;
 	transition: opacity 0.5s ease-in;
 }
 
-.thankyou.show {
+#invitation > .thankyou.show {
 	opacity: 1;
 	z-index: 1;
+}
+
+#invitation > .thankyou h2 {
+	top: 50%;
+	transform: translateY(-50%);
+	position: absolute;
+	text-align: center;
+	width: 100%;
 }
