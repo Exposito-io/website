@@ -963,7 +963,9 @@
 
 		.only-xlarge {
 			display: none;
-		}			
+		}	
+		
+				
 
 		.row > * {
 			padding: 0 0 0 2.5em;
@@ -1198,7 +1200,11 @@
 
 		.only-xlarge {
 			display: none;
-		}				
+		}	
+
+		.main-content {
+			display: none;
+		}					
 
 		.row > * {
 			padding: 0 0 0 2.5em;
@@ -1419,7 +1425,7 @@
 		.only-small {
 			display: small;
 		}	
-			
+
 		.only-xsmall {
 			display: initial;
 		}
@@ -1435,6 +1441,10 @@
 		.only-xlarge {
 			display: none;
 		}		
+
+		.main-content {
+			display: none;
+		}
 
 		.row > * {
 			padding: 0 0 0 2.5em;
