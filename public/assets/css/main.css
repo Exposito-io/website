@@ -85,7 +85,41 @@
 		width: 70em;
 	}
 
+	.image.main .big-quote {
+		display: none;
+		position: absolute;
+		top: 50%;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		font-size: 1.4em;
+		line-height: 20px;
+		text-shadow: 0 1px 4px #333;
+		color: white;
+		word-spacing: 6px;
+		transform: translateY(-50%);
+	}	
+
+	.image.main .big-quote:before {
+		content: '“';
+		font-size: 90px;
+		font-family: serif;
+	}
+
+	.image.main .big-quote:after {
+		content: '„';
+		font-size: 90px;
+		font-family: serif;
+		padding-left: 5px;
+		display: inline-block;
+    	margin-top: -12px;
+	}
+
 	@media screen and (max-width: 1680px) {
+
+		.image.main .big-quote {
+			display: none;
+		}
 
 		.container.\31 25\25 {
 			width: 100%;
@@ -113,6 +147,10 @@
 
 	@media screen and (max-width: 1280px) {
 
+		.image.main .big-quote {
+			display: none;
+		}
+
 		.container.\31 25\25 {
 			width: 100%;
 			max-width: 112.5%;
@@ -138,6 +176,10 @@
 	}
 
 	@media screen and (max-width: 980px) {
+
+		.image.main .big-quote {
+			display: none;
+		}
 
 		.container.\31 25\25 {
 			width: 100%;
@@ -165,6 +207,10 @@
 
 	@media screen and (max-width: 736px) {
 
+		.image.main .big-quote {
+			display: initial;
+		}
+
 		.container.\31 25\25 {
 			width: 100%;
 			max-width: 125%;
@@ -190,6 +236,10 @@
 	}
 
 	@media screen and (max-width: 480px) {
+
+		.image.main .big-quote {
+			display: initial;
+		}		
 
 		.container.\31 25\25 {
 			width: 100%;
@@ -964,8 +1014,8 @@
 		.only-xlarge {
 			display: none;
 		}	
-		
-				
+
+
 
 		.row > * {
 			padding: 0 0 0 2.5em;
@@ -1799,7 +1849,7 @@
 		font-family: serif;
 		padding-left: 5px;
 		display: inline-block;
-    margin-top: -12px;
+    	margin-top: -12px;
 	}
 
 	code {
