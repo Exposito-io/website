@@ -17,6 +17,7 @@
     "ejs": "^2.3.1",
     "express": "^4.13.3",
     "express-recaptcha": "^2.2.0",
+    "mongo-factory": "^1.0.0",
     "mongodb": "^2.2.31",
     "morgan": "^1.6.1",
     "serve-favicon": "^2.3.0"

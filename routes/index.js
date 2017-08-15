@@ -2,8 +2,8 @@ var express = require('express')
 var router = express.Router()
 var recaptcha = require('express-recaptcha')
 var config = require('config')
-var mongo = require('mongodb').MongoClient
-
+var mongoFactory = require('mongo-factory')
+ 
 recaptcha.init(config.get('recaptchaSiteKey'), config.get('recaptchaSecret'))
 
 
@@ -29,19 +29,48 @@ router.get('/homeb', function (req, res) {
 })
 
 
-router.post('/newsletter', function (req, res) {
-    // TODO
-    recaptcha.verify(req, function (error) {
-        if (error)
+router.post('/newsletter', async function (req, res) {
+    try {
+        if (await validateEmail(email)) {
+            recaptcha.verify(req, function (error) {
+                if (error)
+                    return res.send('0')
+
+                let db = await mongoFactory.getConnection(config.get('db'))
+                await db.collection('newsletter-signups').insertOne({
+                    email,
+                    date: new Date(),
+                    isDeleted: false
+                })
+                return res.send('1')
+            })
+        }
+        else
             return res.send('0')
 
-        
-        
+    } catch(e) {
+        console.log('Error: ', e)
         return res.send('0')
-
-    })
+    }
 
 })
+
+
+
+async function validateEmail(email) {
+    if (isEmail(email)) {
+        let db = await mongoFactory.getConnection(config.get('db'))
+        let email = await db.collection('newsletter-signups').findOne({ email })
+        return email == null
+    }
+    else
+        return false
+}
+
+function isEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
 
 
 function getHomepage() {
