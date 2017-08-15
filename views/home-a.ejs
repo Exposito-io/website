@@ -27,13 +27,14 @@
 
 
 				<section id="one" class="spotlight style1 right middle">
-					<span class="image fit main"><img src="images/pic04.jpg" alt="" />
+					<span class="image fit main">
+						<img src="images/pic04.jpg" alt="" />
+						<p class="big-quote only-small only-xsmall">Manage your open source project just as you would manage a startup, but without any paperwork or bank account</p>
 					</span>
 					<div class="content">
 						<header>
 							<h2>Your project as a DAO</h2>
 						</header>
-						<p class="big-quote only-small only-xsmall">Manage your open source project just as you would manage a startup, but without any paperwork or bank account</p>
 						<p>Each project on Exposito is a Decentralized Autonomous Organization, with its own token as equity. You get to choose what percentage goes to the founders, managers, developers and other shareholders. You can then use your shares to elect project managers, assign funds or vote on any topic related to the project, like feature priority or dividend distribution.</p>
 						<p>Developers are a special type of shareholders. Each developer receives an amount of tokens corresponding to the number of lines of code he or she contributed to the project. The more you contribute, the more tokens you receive. </p>
 						<!--<ul class="actions">
@@ -46,9 +47,6 @@
 					</div>
 					<a href="#three" class="goto-next scrolly">Next</a>
 				</section>
-
-
-
 
 
 
@@ -169,7 +167,15 @@
 						<form method="post" action="#" class="container 50%">
 							<div class="row uniform 50%">
 								<div class="8u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
-								<div class="4u$ 12u$(xsmall)"><input type="submit" value="Sign up" class="fit special" /></div>
+								<div class="4u$ 12u$(xsmall)">
+									<input 
+										type="submit" 
+										value="Sign up" 
+										class="fit special g-recaptcha"
+										data-sitekey="6LdQ9SwUAAAAAL6eKj2lO385FqeCaZ5-6Z1Xu25A"
+										data-callback="OnNewsletterSubmit" 
+									/>
+								</div>
 							</div>
 						</form>
 					</div>

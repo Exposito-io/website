@@ -2,6 +2,7 @@ var express = require('express')
 var router = express.Router()
 var recaptcha = require('express-recaptcha')
 var config = require('config')
+var mongo = require('mongodb').MongoClient
 
 recaptcha.init(config.get('recaptchaSiteKey'), config.get('recaptchaSecret'))
 
@@ -34,7 +35,9 @@ router.post('/newsletter', function (req, res) {
         if (error)
             return res.send('0')
 
-
+        
+        
+        return res.send('0')
 
     })
 
