@@ -303,6 +303,11 @@ $(function() {
 	$('#invitation form').validate({ 
 		email: { required: true, email: true }
 	})
+
+	$('#invitation form').submit(function() {
+		submitNewsletter()
+		return false
+	})
 })
 
 function submitNewsletter() {
@@ -319,7 +324,7 @@ function submitNewsletter() {
 		OnNewsletterSubmitFail()
 	})
 }
-function OnNewsletterSubmit2() {}
+
 
 function OnNewsletterSubmit() {
 		submitNewsletter()
