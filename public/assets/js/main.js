@@ -109,7 +109,7 @@
 
 							$this
 								.css('background-position', 'center 0px');
-							
+
 							$window
 								.on('scroll._parallax', function() {
 
@@ -299,7 +299,30 @@
 
 })(jQuery)
 
+function submitNewsletter() {
+	$.post('/newsletter', { email: $('#email').val() })
+	.done(function(result) {
+		if (result == 1)
+			OnNewsletterSubmitSuccess()
+		else
+			OnNewsletterSubmitFail()
+	})
+	.fail(function(result) {
+		console.log('fail')
+		console.log(result)
+		OnNewsletterSubmitFail()
+	})
+}
+function OnNewsletterSubmit2() {}
 
 function OnNewsletterSubmit() {
-	console.log('Newsletter submit')
+		submitNewsletter()
+}
+
+function OnNewsletterSubmitSuccess() {
+	$('#invitation .thankyou').addClass('show')
+}
+
+function OnNewsletterSubmitFail() {
+	$('#invitation .error').addClass('show')
 }

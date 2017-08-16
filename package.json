@@ -4,11 +4,13 @@
   "private": true,
   "main": "app.js",
   "scripts": {
+    "dev": "node --inspect ./bin/www",
     "start": "node ./bin/www",
     "test": "mocha --recursive test",
     "test:coverage": "nyc npm test",
     "test:unit": "mocha --recursive test/middleware test/models test/routes",
-    "test:integration": "mocha --recursive test/integration"
+    "test:integration": "mocha --recursive test/integration",
+    "postinstall": "./node_modules/.bin/frontend-dependencies"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
@@ -17,6 +19,8 @@
     "ejs": "^2.3.1",
     "express": "^4.13.3",
     "express-recaptcha": "^2.2.0",
+    "frontend-dependencies": "^0.2.1",
+    "jquery-validation": "^1.17.0",
     "mongo-factory": "^1.0.0",
     "mongodb": "^2.2.31",
     "morgan": "^1.6.1",
@@ -32,5 +36,11 @@
     "mocha": "^3.0.2",
     "nyc": "^10.0.0",
     "supertest": "^2.0.0"
-  }
+  },
+  "frontendDependencies": {
+    "target": "public/vendor",
+    "packages": [
+      "jquery-validation"
+    ]
+  }  
 }

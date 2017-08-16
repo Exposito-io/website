@@ -3,7 +3,7 @@ var router = express.Router()
 var recaptcha = require('express-recaptcha')
 var config = require('config')
 var mongoFactory = require('mongo-factory')
- 
+
 recaptcha.init(config.get('recaptchaSiteKey'), config.get('recaptchaSecret'))
 
 
@@ -29,21 +29,28 @@ router.get('/homeb', function (req, res) {
 })
 
 
+
 router.post('/newsletter', async function (req, res) {
     try {
-        if (await validateEmail(email)) {
-            recaptcha.verify(req, function (error) {
-                if (error)
-                    return res.send('0')
+        let email = req.body.email
 
-                let db = await mongoFactory.getConnection(config.get('db'))
-                await db.collection('newsletter-signups').insertOne({
-                    email,
-                    date: new Date(),
-                    isDeleted: false
-                })
-                return res.send('1')
-            })
+        if (await validateEmail(email)) {
+
+            //recaptcha.verify(req, async function (error) {
+            //    if (error)
+            //        return res.send('0')
+
+               let db = await mongoFactory.getConnection(config.get('db'))
+               let result = await db.collection('newsletter-signups').insertOne({
+                     email,
+                     date: new Date(),
+                     isDeleted: false
+                 })
+
+               return res.send('1')
+
+            //})
+
         }
         else
             return res.send('0')
@@ -60,8 +67,9 @@ router.post('/newsletter', async function (req, res) {
 async function validateEmail(email) {
     if (isEmail(email)) {
         let db = await mongoFactory.getConnection(config.get('db'))
-        let email = await db.collection('newsletter-signups').findOne({ email })
-        return email == null
+        let result = await db.collection('newsletter-signups').findOne({ email })
+        console.log(result)
+        return result == null
     }
     else
         return false

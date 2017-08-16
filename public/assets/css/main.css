@@ -4296,3 +4296,29 @@
 	text-align: center;
 	width: 100%;
 }
+
+
+#invitation > .error {
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	background: #1c1d26;
+	transition: opacity 0.5s ease-in;
+}
+
+#invitation > .error.show {
+	opacity: 1;
+	z-index: 1;
+}
+
+#invitation > .error h2 {
+	top: 50%;
+	transform: translateY(-50%);
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
