@@ -301,13 +301,10 @@
 
 $(function() {
 	$('#invitation form').validate({ 
-		email: { required: true, email: true }
+		email: { required: true, email: true },
+		submitHandler: submitNewsletter
 	})
 
-	$('#invitation form').submit(function() {
-		submitNewsletter()
-		return false
-	})
 })
 
 function submitNewsletter() {
