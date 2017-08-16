@@ -42,10 +42,10 @@ router.post('/newsletter', async function (req, res) {
 
                let db = await mongoFactory.getConnection(config.get('db'))
                let result = await db.collection('newsletter-signups').insertOne({
-                     email,
-                     date: new Date(),
-                     isDeleted: false
-                 })
+                    email,
+                    date: new Date(),
+                    isDeleted: false
+                })
 
                return res.send('1')
 

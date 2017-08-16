@@ -299,6 +299,12 @@
 
 })(jQuery)
 
+$(function() {
+	$('#invitation form').validate({ 
+		email: { required: true, email: true }
+	})
+})
+
 function submitNewsletter() {
 	$.post('/newsletter', { email: $('#email').val() })
 	.done(function(result) {
