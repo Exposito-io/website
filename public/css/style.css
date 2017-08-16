@@ -6,3 +6,8 @@ h1#logo {
   font-family: 'Comfortaa', cursive;
   font-size: 38px;
 }
+
+#titlebar .title {
+  font-family: 'Comfortaa', cursive;
+  font-size: 20px;
+}
