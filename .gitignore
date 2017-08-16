@@ -5,4 +5,4 @@ public/vendor
 .sass-cache
 npm-debug.log
 config/*
-!config/default.json
+!config/default.json.sample
