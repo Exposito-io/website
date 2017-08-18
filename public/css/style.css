@@ -17,6 +17,8 @@ h1#logo {
 .popover {
   max-width: 400px;
   background-color: transparent;
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-size: 11.5pt;
 }
 
 .popover h3 {
@@ -25,6 +27,7 @@ h1#logo {
 
 .popover .popover-content {
   background-color: rgba(37, 48, 49, 0.92);
+  padding: 20px;
 }
 
 .popover.top>.arrow:after {

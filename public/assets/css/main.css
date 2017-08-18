@@ -2927,7 +2927,8 @@
 		input[type="reset"]:active,
 		input[type="button"]:active,
 		.button:active {
-			background-color: rgba(228, 76, 101, 0.15);
+			/*background-color: rgba(228, 76, 101, 0.15);*/
+			background-color: #2978A0;
 		}
 
 		input[type="submit"].icon:before,

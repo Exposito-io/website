@@ -306,7 +306,10 @@ $(function() {
 	})
 
 	//$('[data-toggle="popover"]').popover({ trigger: "hover" })
-	$('[data-toggle="popover"]').popover({ container: 'body' })
+	$('#dao-link').popover({ 
+		container: 'body',
+		content: 'A Decentralized Autonomous Organization (DAO) is a new form of organization that is built on a blockchain. The code by itself is decentralized and runs on thousands of nodes all over the world at the same time. Another decentralized characteristic is that anyone can participate in a DAO by acquiring tokens. Tokens are shares in a DAO and can be acquired, mostly in exchange for money. With tokens you can take part, collaborate, propose, rate and vote to name a few possible activities. If you want out, you can sell your tokens at the current market price, via an exchange. This open participation makes the DAO decentralized. '
+	})
 
 })
 
