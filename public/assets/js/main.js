@@ -55,6 +55,8 @@
 				enter: function(t) { 
 					if (history.pushState) 
 						history.pushState(null, null, "#")
+
+					// ga('set', 'page', '/#');
 				}
 			})
 
@@ -164,14 +166,14 @@
 			}
 
 		// Spotlights.
-			var $spotlights = $('.spotlight');
+			var $spotlights = $('.spotlight')
 
 			$spotlights
 				._parallax()
 				.each(function() {
 
 					var $this = $(this),
-						on, off;
+						on, off
 
 					on = function() {
 
@@ -216,6 +218,8 @@
 										enter:		function(t) { 
 											if (history.pushState) 
 												history.pushState(null, null, "#" + $this.get(0).id)
+
+											// ga('set', 'page', '/#' + $this.get(0).id);
 																					
 											$this.removeClass('inactive')
 										},
@@ -224,11 +228,11 @@
 
 										// leave: function(t) { $this.addClass('inactive') },
 
-									});
+									})
 
 							}
 
-					};
+					}
 
 					off = function() {
 
@@ -324,7 +328,6 @@ $(function() {
 	var daoPopoverTimeout
 	var daoPopoverManualHide = false
 
-	//$('[data-toggle="popover"]').popover({ trigger: "hover" })
 	$('#dao-link').popover({ 
 		container: 'body',
 		trigger: 'click hover',
