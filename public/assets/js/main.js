@@ -320,10 +320,50 @@ $(function() {
 		submitHandler: submitNewsletter
 	})
 
+
+	var daoPopoverTimeout
+	var daoPopoverManualHide = false
+
 	//$('[data-toggle="popover"]').popover({ trigger: "hover" })
 	$('#dao-link').popover({ 
 		container: 'body',
+		trigger: 'click hover',
 		content: 'A Decentralized Autonomous Organization (DAO) is a new form of organization that is built on a blockchain. The code by itself is decentralized and runs on thousands of nodes all over the world at the same time. Another decentralized characteristic is that anyone can participate in a DAO by acquiring tokens. Tokens are shares in a DAO and can be acquired, mostly in exchange for money. With tokens you can take part, collaborate, propose, rate and vote to name a few possible activities. If you want out, you can sell your tokens at the current market price, via an exchange. This open participation makes the DAO decentralized. '
+	})
+
+	$('#dao-link').on('hide.bs.popover', function(event) {
+		if (daoPopoverManualHide) {
+			daoPopoverManualHide = false
+			return
+		}
+		var id = $(this).attr('aria-describedby')
+		var $self = $(this)
+
+		if (id) {
+			var container = $('#' + id)
+
+			event.preventDefault()
+			event.stopPropagation()
+			event.stopImmediatePropagation()
+
+			daoPopoverTimeout = setTimeout(function() {
+				daoPopoverManualHide = true
+				$self.popover('hide', true)
+			}, 800)
+
+			container.on('mouseenter', function(){
+				//We entered the actual popover – call off the dogs
+				clearTimeout(daoPopoverTimeout)
+			})	
+
+			container.on('mouseleave', function(){
+				daoPopoverTimeout = setTimeout(function() {
+					daoPopoverManualHide = true
+					$self.popover('hide', true)
+				}, 800)
+			})
+		}
+
 	})
 
 })
