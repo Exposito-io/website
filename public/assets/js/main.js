@@ -165,6 +165,9 @@
 
 					on = function() {
 
+						if (history.pushState) { 
+							history.pushState(null, null, "#" + $this.get(0).id)
+						}
 						// Use main <img>'s src as this spotlight's background.
 							$this.css('background-image', 'url("' + $this.find('.image.main > img').attr('src') + '")');
 
