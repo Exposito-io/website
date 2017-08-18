@@ -103,9 +103,9 @@
 
 				$.fn._parallax = function() {
 
-					return $(this);
+					return $(this)
 
-				};
+				}
 
 			}
 			else {
@@ -115,40 +115,40 @@
 					$(this).each(function() {
 
 						var $this = $(this),
-							on, off;
+							on, off
 
 						on = function() {
 
 							$this
-								.css('background-position', 'center 0px');
+								.css('background-position', 'center 0px')
 
 							$window
 								.on('scroll._parallax', function() {
 
-									var pos = parseInt($window.scrollTop()) - parseInt($this.position().top);
+									var pos = parseInt($window.scrollTop()) - parseInt($this.position().top)
 
-									$this.css('background-position', 'center ' + (pos * -0.15) + 'px');
+									$this.css('background-position', 'center ' + (pos * -0.15) + 'px')
 
-								});
+								})
 
-						};
+						}
 
 						off = function() {
 
 							$this
-								.css('background-position', '');
+								.css('background-position', '')
 
 							$window
-								.off('scroll._parallax');
+								.off('scroll._parallax')
 
 						};
 
 						skel.on('change', function() {
 
 							if (skel.breakpoint('medium').active)
-								(off)();
+								(off)()
 							else
-								(on)();
+								(on)()
 
 						});
 
@@ -156,7 +156,7 @@
 
 					return $(this);
 
-				};
+				}
 
 				$window
 					.on('load resize', function() {
@@ -165,7 +165,8 @@
 
 			}
 
-		// Spotlights.
+			
+			// Spotlights.
 			var $spotlights = $('.spotlight')
 
 			$spotlights
@@ -324,7 +325,7 @@ $(function() {
 		submitHandler: submitNewsletter
 	})
 
-
+	var daoPopoverStopwatch = new Stopwatch()
 	var daoPopoverTimeout
 	var daoPopoverManualHide = false
 
@@ -334,9 +335,16 @@ $(function() {
 		content: 'A Decentralized Autonomous Organization (DAO) is a new form of organization that is built on a blockchain. The code by itself is decentralized and runs on thousands of nodes all over the world at the same time. Another decentralized characteristic is that anyone can participate in a DAO by acquiring tokens. Tokens are shares in a DAO and can be acquired, mostly in exchange for money. With tokens you can take part, collaborate, propose, rate and vote to name a few possible activities. If you want out, you can sell your tokens at the current market price, via an exchange. This open participation makes the DAO decentralized. '
 	})
 
+	$('#dao-link').on('shown.bs.popover', function(event) {
+		daoPopoverStopwatch = new Stopwatch()
+		daoPopoverStopwatch.start()
+	})
+
 	$('#dao-link').on('hide.bs.popover', function(event) {
 		if (daoPopoverManualHide) {
 			daoPopoverManualHide = false
+			daoPopoverStopwatch.stop()
+			sendEvent('DAO popover', 'duration', '', daoPopoverStopwatch.duration())
 			return
 		}
 		var id = $(this).attr('aria-describedby')

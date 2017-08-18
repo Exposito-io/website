@@ -24,7 +24,8 @@
     "mongo-factory": "^1.0.0",
     "mongodb": "^2.2.31",
     "morgan": "^1.6.1",
-    "serve-favicon": "^2.3.0"
+    "serve-favicon": "^2.3.0",
+    "stopwatch-js": "0.0.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -40,7 +41,8 @@
   "frontendDependencies": {
     "target": "public/vendor",
     "packages": [
-      "jquery-validation"
+      "jquery-validation",
+      "stopwatch-js"
     ]
-  }  
+  }
 }
