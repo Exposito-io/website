@@ -11,3 +11,22 @@ h1#logo {
   font-family: 'Comfortaa', cursive;
   font-size: 20px;
 }
+
+
+
+.popover {
+  max-width: 400px;
+  background-color: transparent;
+}
+
+.popover h3 {
+  display: none;
+}
+
+.popover .popover-content {
+  background-color: rgba(37, 48, 49, 0.92);
+}
+
+.popover.top>.arrow:after {
+  border-top-color: rgba(37, 48, 49, 0.92);
+}

@@ -305,7 +305,8 @@ $(function() {
 		submitHandler: submitNewsletter
 	})
 
-	$('[data-toggle="popover"]').popover({ trigger: "hover" })
+	//$('[data-toggle="popover"]').popover({ trigger: "hover" })
+	$('[data-toggle="popover"]').popover({ container: 'body' })
 
 })
 
