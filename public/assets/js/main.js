@@ -344,7 +344,7 @@ $(function() {
 		if (daoPopoverManualHide) {
 			daoPopoverManualHide = false
 			daoPopoverStopwatch.stop()
-			sendEvent('DAO popover', 'duration', '', daoPopoverStopwatch.duration())
+			sendEvent('DAO popover', 'duration', '', daoPopoverStopwatch.duration() * 1000)
 			return
 		}
 		var id = $(this).attr('aria-describedby')
@@ -356,6 +356,7 @@ $(function() {
 			event.preventDefault()
 			event.stopPropagation()
 			event.stopImmediatePropagation()
+			event.stop
 
 			daoPopoverTimeout = setTimeout(function() {
 				daoPopoverManualHide = true
