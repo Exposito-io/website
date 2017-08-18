@@ -48,6 +48,16 @@
 				hideDelay: 350
 			});
 
+			$('#banner').scrollex({
+				mode:		'middle',
+				top:		0,
+				bottom:		0,
+				enter: function(t) { 
+					if (history.pushState) 
+						history.pushState(null, null, "#")
+				}
+			})
+
 		// Off-Canvas Navigation.
 
 			// Title Bar.
@@ -212,7 +222,7 @@
 
 										// Uncomment the line below to "rewind" when this spotlight scrolls out of view.
 
-										//leave:	function(t) { $this.addClass('inactive'); },
+										// leave: function(t) { $this.addClass('inactive') },
 
 									});
 
