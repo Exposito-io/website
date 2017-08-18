@@ -165,11 +165,8 @@
 
 					on = function() {
 
-						if (history.pushState) { 
-							history.pushState(null, null, "#" + $this.get(0).id)
-						}
 						// Use main <img>'s src as this spotlight's background.
-							$this.css('background-image', 'url("' + $this.find('.image.main > img').attr('src') + '")');
+						$this.css('background-image', 'url("' + $this.find('.image.main > img').attr('src') + '")');
 
 						// Enable transitions (if supported).
 							if (skel.canUse('transition')) {
@@ -206,7 +203,12 @@
 										bottom:		bottom,
 										initialize:	function(t) { $this.addClass('inactive'); },
 										terminate:	function(t) { $this.removeClass('inactive'); },
-										enter:		function(t) { $this.removeClass('inactive'); },
+										enter:		function(t) { 
+											if (history.pushState) 
+												history.pushState(null, null, "#" + $this.get(0).id)
+																					
+											$this.removeClass('inactive')
+										},
 
 										// Uncomment the line below to "rewind" when this spotlight scrolls out of view.
 
