@@ -333,25 +333,35 @@ function submitNewsletter() {
 	.done(function(result) {
 		if (result == 1)
 			OnNewsletterSubmitSuccess()
-		else
+		else {
+			sendEvent('newsletter', 'submit fail', 'server error')
 			OnNewsletterSubmitFail()
+		}
 	})
 	.fail(function(result) {
 		console.log('fail')
 		console.log(result)
 		OnNewsletterSubmitFail()
+		sendEvent('newsletter', 'submit fail', 'connection error')
 	})
 }
 
 
 function OnNewsletterSubmit() {
-		submitNewsletter()
+	submitNewsletter()
 }
 
 function OnNewsletterSubmitSuccess() {
+	sendEvent('newsletter', 'submit success')
 	$('#invitation .thankyou').addClass('show')
 }
 
 function OnNewsletterSubmitFail() {
 	$('#invitation .error').addClass('show')
+}
+
+
+function sendEvent(category, action, label, value) {
+	console.log('event: ', category, action, label, value)
+	ga('send', 'event', category, action, label, value)
 }
