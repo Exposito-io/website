@@ -21,7 +21,7 @@ spec:
         run: exposito-website
     spec:
       containers:
-      - image: gcr.io/quantal-152414/exposito-website:v0.0.1
+      - image: gcr.io/quantal-152414/exposito-website:v0.0.6
         imagePullPolicy: IfNotPresent
         name: exposito-website
         ports:
