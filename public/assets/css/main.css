@@ -127,6 +127,11 @@
 			display: none;
 		}
 
+		.cloud-providers img {
+			width: 12em;
+			vertical-align: middle;
+		}		
+
 		.container.\31 25\25 {
 			width: 100%;
 			max-width: 87.5em;
