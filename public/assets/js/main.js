@@ -335,6 +335,13 @@ $(function() {
 	var daoPopoverTimeout
 	var daoPopoverManualHide = false
 
+	function closeDaoPopover() {
+		daoPopoverTimeout = setTimeout(function() {
+			daoPopoverManualHide = true
+			$('#dao-link').popover('hide')
+		}, 500)		
+	}
+
 	$('#dao-link').popover({ 
 		container: 'body',
 		trigger: 'click hover',
@@ -347,12 +354,26 @@ $(function() {
 		daoPopoverStopwatch.start()
 	})
 
+	$('body').click(function(evt) {
+		if(evt.target.id == "dao-link" || evt.target.className.indexOf('popover') > -1) 
+			return		
+
+		if ($('.popover').length > 0) {
+			daoPopoverManualHide = true
+			$('#dao-link').popover('hide')
+			// calling .popover('hide') does not hide the div, so we
+			// remove the div completely
+			$('.popover').remove()
+		}
+		
+	})
+
 	$('#dao-link').on('hide.bs.popover', function(event) {
 		if (daoPopoverManualHide) {
 			daoPopoverManualHide = false
 			daoPopoverStopwatch.stop()
 			sendEvent('DAO popover', 'duration', '', daoPopoverStopwatch.duration() * 1000)
-			return
+			return true
 		}
 		var id = $(this).attr('aria-describedby')
 		var $self = $(this)
@@ -365,10 +386,7 @@ $(function() {
 			event.stopImmediatePropagation()
 			event.stop
 
-			daoPopoverTimeout = setTimeout(function() {
-				daoPopoverManualHide = true
-				$self.popover('hide', true)
-			}, 500)
+			closeDaoPopover()
 
 			container.on('mouseenter', function(){
 				//We entered the actual popover – call off the dogs
@@ -376,10 +394,7 @@ $(function() {
 			})	
 
 			container.on('mouseleave', function(){
-				daoPopoverTimeout = setTimeout(function() {
-					daoPopoverManualHide = true
-					$self.popover('hide', true)
-				}, 500)
+				closeDaoPopover()
 			})
 		}
 
