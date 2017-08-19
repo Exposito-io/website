@@ -85,6 +85,13 @@
 		width: 70em;
 	}
 
+	.spotlight .main-content .vertical-align {
+		transition: opacity 0.75s ease-in;
+		margin-top: 25%;
+		transform: translateY(-50%);
+		opacity: 1;
+	}	
+
 	.image.main .big-quote {
 		display: none;
 		position: absolute;
@@ -150,6 +157,15 @@
 			display: none;
 		}
 
+		.spotlight .main-content .vertical-align {
+			margin-top: 35%;
+    		transform: translateY(-50%);			
+		}
+
+		.spotlight .main-content .cloud-providers img {
+			width: 8em;
+		}
+
 		.container.\31 25\25 {
 			width: 100%;
 			max-width: 112.5%;
@@ -177,7 +193,9 @@
 	@media screen and (max-width: 980px) {
 
 		.image.main .big-quote {
-			display: none;
+			display: initial;
+			font-size: 32px;
+			line-height: 40px;			
 		}
 
 		.container.\31 25\25 {
@@ -208,6 +226,8 @@
 
 		.image.main .big-quote {
 			display: initial;
+			font-size: 1.4em;
+			line-height: 30px;			
 		}
 
 		.container.\31 25\25 {
@@ -1011,6 +1031,11 @@
 		}
 
 		.only-xlarge {
+			display: none;
+		}
+
+
+		.main-content {
 			display: none;
 		}
 
@@ -3178,12 +3203,6 @@
 			opacity: 1;*/
 		}
 
-		.spotlight .main-content .vertical-align {
-			transition: opacity 0.75s ease-in;
-			margin-top: 25%;
-			transform: translateY(-50%);
-			opacity: 1;
-		}
 
 		.spotlight .goto-next {
 			-moz-transform: translate(0,0);
@@ -3769,7 +3788,11 @@
 
 			.spotlight.left .content, .spotlight.right .content {
 				padding: 4.5em 2.5em;
-				width: 25em;
+				width: 28em;
+			}
+
+			.spotlight.middle .main-content	{
+				width: calc(100% - 28em);
 			}
 
 		/* Wrapper */
