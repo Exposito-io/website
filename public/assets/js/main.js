@@ -362,7 +362,7 @@ $(function() {
 			daoPopoverTimeout = setTimeout(function() {
 				daoPopoverManualHide = true
 				$self.popover('hide', true)
-			}, 800)
+			}, 500)
 
 			container.on('mouseenter', function(){
 				//We entered the actual popover – call off the dogs
@@ -373,7 +373,7 @@ $(function() {
 				daoPopoverTimeout = setTimeout(function() {
 					daoPopoverManualHide = true
 					$self.popover('hide', true)
-				}, 800)
+				}, 500)
 			})
 		}
 
