@@ -56,7 +56,7 @@
 					if (history.pushState) 
 						history.pushState(null, null, "#")
 
-					ga('set', 'page', '/#');
+					ga('set', 'page', location.pathname)
 				}
 			})
 
@@ -220,7 +220,7 @@
 											if (history.pushState) 
 												history.pushState(null, null, "#" + $this.get(0).id)
 
-											ga('set', 'page', '/#' + $this.get(0).id);
+											ga('set', 'page', location.pathname + '/' + $this.get(0).id);
 																					
 											$this.removeClass('inactive')
 										},
