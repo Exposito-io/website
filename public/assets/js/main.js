@@ -346,7 +346,7 @@ $(function() {
 		container: 'body',
 		trigger: 'click hover',
 		html: true,
-		content: 'A Decentralized Autonomous Organization (DAO) is a new form of organization that is completely virtual and built around cryptographic rules. Anyone can participate in a DAO by acquiring tokens, which are used as actual shares of the organization. <br><br>With tokens you can take part, collaborate, propose, vote and receive dividends, to name a few possibilities. This open participation makes the DAO completely autonomous and decentralized.'
+		content: 'A Decentralized Autonomous Organization (DAO) is a new form of organization that is completely virtual and built around cryptographic algorithms. Anyone can participate in a DAO by acquiring tokens, which are used as actual shares of the organization. <br><br>With tokens you can collaborate, propose new ideas, vote and receive dividends, to name a few possibilities. This open participation makes the DAO completely autonomous and decentralized.'
 	})
 
 	$('#dao-link').on('shown.bs.popover', function(event) {
