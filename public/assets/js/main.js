@@ -63,6 +63,21 @@
 				}
 			})
 
+			$('#invitation').scrollex({
+				mode:		'middle',
+				top:		0,
+				bottom:		0,
+				enter: function(t) { 
+					if (history.pushState) 
+						history.pushState(null, null, "#invitation")
+
+					//ga('set', 'page', location.pathname)
+					ga('send', 'pageview', {
+						'page': location.pathname + '/invitation'
+					})
+				}
+			})			
+
 		// Off-Canvas Navigation.
 
 			// Title Bar.
