@@ -13,6 +13,31 @@
 		var	$window = $(window),
 			$body = $('body');
 
+		console.log('spotlight liength: ' + $('.spotlight').length)
+
+		$('.spotlight').scrollex({
+					mode:		'middle',
+					top:		0,
+					bottom:		0,
+					initialize:	function() {},
+					terminate:	function() {},
+					enter:		function() {
+						console.log('page change ' + $(this).get(0).id)
+						if (history.pushState) 
+							history.pushState(null, null, "#" + $(this).get(0).id)
+
+						//ga('set', 'page', location.pathname + '/' + $this.get(0).id);
+						ga('send', 'pageview', {
+							'page': location.pathname + '/' + $(this).get(0).id
+						})
+					},
+
+					// Uncomment the line below to "rewind" when this wrapper scrolls out of view.
+					
+					//leave:	function(t) { $this.addClass('inactive'); },
+
+				})
+
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
 
@@ -53,6 +78,7 @@
 				top:		0,
 				bottom:		0,
 				enter: function(t) { 
+					console.log('banner')
 					if (history.pushState) 
 						history.pushState(null, null, "#")
 
@@ -212,22 +238,13 @@
 
 									}
 
-								// Add scrollex.
 									$this.scrollex({
 										mode:		mode,
 										top:		top,
 										bottom:		bottom,
 										initialize:	function(t) { $this.addClass('inactive'); },
 										terminate:	function(t) { $this.removeClass('inactive'); },
-										enter:		function(t) { 
-											if (history.pushState) 
-												history.pushState(null, null, "#" + $this.get(0).id)
-
-											//ga('set', 'page', location.pathname + '/' + $this.get(0).id);
-											ga('send', 'pageview', {
-												'page': location.pathname + '/' + $this.get(0).id
-											})
-																					
+										enter:		function(t) { 																				
 											$this.removeClass('inactive')
 										},
 
@@ -312,6 +329,7 @@
 							(on)();
 
 					});
+					
 
 				});
 
