@@ -33,3 +33,7 @@ h1#logo {
 .popover.top>.arrow:after {
   border-top-color: rgba(37, 48, 49, 0.92);
 }
+
+.popover.bottom>.arrow:after {
+  border-bottom-color: rgba(37, 48, 49, 0.92);
+}

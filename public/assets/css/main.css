@@ -3011,7 +3011,7 @@
 			input[type="reset"].special:active,
 			input[type="button"].special:active,
 			.button.special:active {
-				background-color: #e13652;
+				background-color: #8093b3;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -3555,6 +3555,10 @@
 			top: 0;
 		}
 
+		#header h1 a:hover {
+			text-decoration: none;
+		}		
+
 		#header nav {
 			position: absolute;
 			right: 1em;
@@ -3591,6 +3595,10 @@
 
 					#header nav ul li.active > a, #header nav ul li.active > span {
 						color: #576782;
+					}
+
+					#header nav ul li a.button:hover {
+						text-decoration: none;
 					}
 
 					#header nav ul li > ul {
