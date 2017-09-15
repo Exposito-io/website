@@ -13,9 +13,8 @@
 		var	$window = $(window),
 			$body = $('body');
 
-		console.log('spotlight liength: ' + $('.spotlight').length)
-
-		$('.spotlight').scrollex({
+		setTimeout(function() {
+			$('.spotlight').scrollex({
 					mode:		'middle',
 					top:		0,
 					bottom:		0,
@@ -37,6 +36,7 @@
 					//leave:	function(t) { $this.addClass('inactive'); },
 
 				})
+		}, 1000)
 
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
