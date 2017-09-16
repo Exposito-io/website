@@ -21,14 +21,7 @@
 					initialize:	function() {},
 					terminate:	function() {},
 					enter:		function() {
-						console.log('page change ' + $(this).get(0).id)
-						if (history.pushState) 
-							history.pushState(null, null, "#" + $(this).get(0).id)
-
-						//ga('set', 'page', location.pathname + '/' + $this.get(0).id);
-						ga('send', 'pageview', {
-							'page': location.pathname + '/' + $(this).get(0).id
-						})
+						setPage("#" + $(this).get(0).id)
 					},
 
 					// Uncomment the line below to "rewind" when this wrapper scrolls out of view.
@@ -79,13 +72,7 @@
 				bottom:		0,
 				enter: function(t) { 
 					console.log('banner')
-					if (history.pushState) 
-						history.pushState(null, null, "#")
-
-					//ga('set', 'page', location.pathname)
-					ga('send', 'pageview', {
-						'page': location.pathname
-					})
+					setPage('#')
 				}
 			})
 
@@ -94,13 +81,7 @@
 				top:		0,
 				bottom:		0,
 				enter: function(t) { 
-					if (history.pushState) 
-						history.pushState(null, null, "#invitation")
-
-					//ga('set', 'page', location.pathname)
-					ga('send', 'pageview', {
-						'page': location.pathname + '/invitation'
-					})
+					setPage('#invitation')
 				}
 			})			
 
@@ -261,6 +242,7 @@
 										terminate:	function(t) { $this.removeClass('inactive'); },
 										enter:		function(t) { 																				
 											$this.removeClass('inactive')
+											setPage('#' + $this.get(0).id)
 										},
 
 										// Uncomment the line below to "rewind" when this spotlight scrolls out of view.
@@ -471,4 +453,19 @@ function OnNewsletterSubmitFail() {
 function sendEvent(category, action, label, value) {
 	console.log('event: ', category, action, label, value)
 	ga('send', 'event', category, action, label, value)
+}
+
+
+
+
+function setPage(page) {
+	if (location.hash !== page) {
+		if (history.pushState)
+			history.pushState(null, null, page)
+
+		console.log('page change ' + page)
+		ga('send', 'pageview', {
+			'page': location.pathname + '/' + page.replace('#', '')
+		})			
+	}
 }

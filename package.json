@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "node --inspect ./bin/www",
     "start": "node ./bin/www",
+    "deploy": "node scripts/deploy.js",
     "test": "mocha --recursive test",
     "test:coverage": "nyc npm test",
     "test:unit": "mocha --recursive test/middleware test/models test/routes",
