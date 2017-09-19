@@ -37,3 +37,87 @@ h1#logo {
 .popover.bottom>.arrow:after {
   border-bottom-color: rgba(37, 48, 49, 0.92);
 }
+
+
+iframe.video {
+  display: block;
+  margin: auto;
+}
+
+.big-quote.md {
+  font-size: 1.6em;
+  line-height: 38px;
+  display: display;
+  transform: none;
+}
+
+.big-quote.md:before,
+.big-quote.md:after {
+  font-size: 70px;
+}
+
+
+.vertial-align {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+    left: 0;
+    padding: 3em;  
+}
+
+.image.fit.mobile {
+  max-height: initial;
+  position: relative;
+}
+
+.image.fit.mobile > img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+  z-index: 0;
+}
+
+.image.fit.mobile iframe {
+  margin-top: 20px;
+    z-index: 1;
+    position: relative;  
+    width: 560px;
+    height: 315px;
+}
+
+.image.fit.mobile .big-quote {
+  position: relative;
+  font-size: 28px;
+    margin-top: 70px;
+    margin-bottom: 0;
+    display: block;
+  padding: 0 20px;
+    box-sizing: border-box;
+    left: 0;  
+}
+
+
+@media screen and (max-width: 604px) {
+  .image.fit.mobile iframe {
+    width: 400px;
+    height: 225px;
+  }
+
+  .image.fit.mobile .big-quote {
+    top: 33px;
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .image.fit.mobile iframe {
+    width: 320px;
+    height: 180px;
+  }
+
+  .image.fit.mobile .big-quote {
+    top: 33px;
+    font-size: 20px;
+  }
+}
