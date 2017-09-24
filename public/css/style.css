@@ -39,13 +39,8 @@ h1#logo {
 }
 
 
-iframe.video {
-  display: block;
-  margin: auto;
-}
-
 .big-quote.md {
-  font-size: 1.6em;
+  font-size: 28px;
   line-height: 38px;
   display: display;
   transform: none;
@@ -96,6 +91,31 @@ iframe.video {
     box-sizing: border-box;
     left: 0;  
 }
+
+.main-content video {
+  width: calc(100% - 100px);
+  width: 92%;
+  margin: auto;
+  display: block;
+}
+
+.video-wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+  height: 0;
+  width: 90%;
+  margin: auto;
+  display: block;  
+}
+.video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
 
 
 @media screen and (max-width: 604px) {
