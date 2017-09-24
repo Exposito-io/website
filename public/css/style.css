@@ -75,11 +75,13 @@ h1#logo {
 }
 
 .image.fit.mobile iframe {
-  margin-top: 20px;
+    margin: auto;
+    margin-top: 20px;
     z-index: 1;
     position: relative;  
     width: 560px;
     height: 315px;
+    display: block;
 }
 
 .image.fit.mobile .big-quote {
