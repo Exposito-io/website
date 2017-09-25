@@ -84,13 +84,13 @@
 	.container {
 		width: 70em;
 	}
-
+	/*
 	.spotlight .main-content .vertical-align {
 		transition: opacity 0.75s ease-in;
 		margin-top: 25%;
 		transform: translateY(-50%);
 		opacity: 1;
-	}	
+	}*/	
 
 	.image.main .big-quote {
 		display: none;
@@ -3243,7 +3243,7 @@
 
 		.spotlight.left .content, .spotlight.right .content {
 			height: 101%;
-			padding: 6em 3em;
+			padding: 4em 3em;
 			top: 0;
 			width: 28em;
 		}
@@ -3786,7 +3786,7 @@
 		/* Basic */
 
 			body, input, select, textarea {
-				font-size: 12pt;
+				font-size: 11.5pt;
 			}
 
 		/* Spotlight */

@@ -42,8 +42,6 @@ h1#logo {
 .big-quote.md {
   font-size: 28px;
   line-height: 38px;
-  display: display;
-  transform: none;
 }
 
 .big-quote.md:before,
@@ -52,13 +50,15 @@ h1#logo {
 }
 
 
-.vertial-align {
+.vertical-align {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
     left: 0;
     padding: 0 3em;  
   width: 100%;
+  transition: opacity 0.75s ease-in;
+  opacity: 1;
 }
 
 .image.fit.mobile {
@@ -107,8 +107,7 @@ h1#logo {
 }
 
 .main-content video {
-  width: calc(100% - 100px);
-  width: 92%;
+  width: calc(92% - 2px);
   margin: auto;
   display: block;
 }
@@ -132,6 +131,26 @@ video {
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+
+
+#opensource .payments {
+  text-align: center;
+}
+
+#opensource .payments img.payment {
+  margin: 0 20px;
+  height: 160px;
+
+}
+
+#opensource .main-content .big-quote {
+  font-size: 34px;
+}
+
+
+#exposito .content {
+  padding-top: 8em;
 }
 
 
