@@ -155,6 +155,55 @@ video {
 
 
 
+/** Folded sections */
+
+section .folded {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  background: url(/images/pic03.jpg);
+  background-size: cover;
+  transition: opacity 0.5s,
+              max-height 0.3s;
+}
+
+section.unfolded.spotlight:before {
+  background: none;
+}
+
+section.unfolded.animating .folded {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+section.unfolded .folded {
+  opacity: 1;
+  max-height: 1000px;
+}
+
+section.unfolded .content,
+section.unfolded .main-content,
+section.unfolded .image,
+section.unfolded .image.fit.mobile {
+  display: none;
+}
+
+section.unfolded.animating .content,
+section.unfolded.animating .main-content {
+  transition: opacity 0.5s;
+  opacity: 0;
+  display: block;
+}
+
+
+
+
+
+
+
+
 @media screen and (max-width: 604px) {
   .image.fit.mobile iframe {
     width: 400px;
