@@ -163,7 +163,7 @@
 		}
 
 		.spotlight .main-content .vertical-align {
-			margin-top: 35%;
+			top: 45%;
     		transform: translateY(-50%);			
 		}
 

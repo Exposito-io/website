@@ -167,8 +167,15 @@ section .folded {
               max-height 0.3s;
 }
 
+section .folded p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+
 section.unfolded.spotlight:before {
   background: none;
+  z-index: -1;
 }
 
 section.unfolded.animating .folded {
@@ -180,7 +187,7 @@ section.unfolded.animating .folded {
 
 section.unfolded .folded {
   opacity: 1;
-  max-height: 1000px;
+  max-height: 4000px;
 }
 
 section.unfolded .content,
@@ -197,11 +204,75 @@ section.unfolded.animating .main-content {
   display: block;
 }
 
+section.spotlight.unfolded {
+  height: auto;
+}
+
+section.spotlight.animating.unfolded {
+  height: 100vh;
+}
+
+
+.aragon-logo {
+  width: calc(100% - 100px);
+}
+
+.fundraising {
+  width: calc(100% - 200px);
+}
+
+.coding-shares {
+  width: calc(100% - 200px);
+}
+
+
+/** two horizontal sections **/
+
+.two-sections {
+  display: flex;
+  max-width: 1296px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.two-sections.wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.two-sections > div {
+  flex: 1 1 auto;
+  flex-basis: 600px;
+  padding: 0 20px;
+  max-width: 800px;
+  width: calc(50% - 2px);
+  text-align: center;
+  position: relative;
+}
+
+.two-sections > div > img {
+  min-width: 290px;
+}
 
 
 
+.margin-top {
+  margin-top: 60px;
+}
+
+.margin-top-lg {
+  margin-top: 120px;
+}
 
 
+.margin-bottom {
+  margin-bottom: 60px;
+}
+
+.margin-bottom-lg {
+  margin-bottom: 120px;
+}
 
 
 @media screen and (max-width: 604px) {

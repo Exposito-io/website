@@ -5,3 +5,12 @@ function unfoldSection(section) {
         $('#' + section).removeClass('animating')
     }, 500)
 }
+
+
+$(function() {
+    $('.learn-more').click(function() {
+        var containerId = $(this).parents('section').get(0).id
+        unfoldSection(containerId)
+        return false
+    })
+})
